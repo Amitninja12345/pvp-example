@@ -12,12 +12,15 @@ public class Person implements java.io.Serializable {
 
 	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "PERSON_ID_GENERATOR")
 	@javax.persistence.Id
-	@javax.persistence.SequenceGenerator(name = "PERSON_ID_GENERATOR", sequenceName = "PERSON_ID_SEQ")
+	@javax.persistence.SequenceGenerator(sequenceName = "PERSON_ID_SEQ", name = "PERSON_ID_GENERATOR")
 	private java.lang.Long id;
 
 	private java.lang.String name;
 
 	private java.lang.Integer age;
+
+	@org.kie.api.definition.type.Label(value = "abc")
+	private java.lang.String abc;
 
 	public Person() {
 	}
@@ -46,11 +49,20 @@ public class Person implements java.io.Serializable {
 		this.age = age;
 	}
 
+	public java.lang.String getAbc() {
+		return this.abc;
+	}
+
+	public void setAbc(java.lang.String abc) {
+		this.abc = abc;
+	}
+
 	public Person(java.lang.Long id, java.lang.String name,
-			java.lang.Integer age) {
+			java.lang.Integer age, java.lang.String abc) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
+		this.abc = abc;
 	}
 
 }
