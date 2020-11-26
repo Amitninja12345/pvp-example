@@ -19,9 +19,6 @@ public class Person implements java.io.Serializable {
 
 	private java.lang.Integer age;
 
-	@org.kie.api.definition.type.Label(value = "ww")
-	private java.lang.String ww;
-
 	public Person() {
 	}
 
@@ -49,20 +46,11 @@ public class Person implements java.io.Serializable {
 		this.age = age;
 	}
 
-	public java.lang.String getWw() {
-		return this.ww;
-	}
-
-	public void setWw(java.lang.String ww) {
-		this.ww = ww;
-	}
-
 	public Person(java.lang.Long id, java.lang.String name,
-			java.lang.Integer age, java.lang.String ww) {
+			java.lang.Integer age) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
-		this.ww = ww;
 	}
 
 }
